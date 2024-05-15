@@ -177,6 +177,7 @@ nav ul .fa-xmark{
 }
 .bigger-home-container{
     height: 220px;
+    overflow-y: auto;
 }
 .home-container .user-section{
     background-color: white;
