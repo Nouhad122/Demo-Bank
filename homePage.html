@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Unity Bank | HomePage</title>
+</head>
+<body>
+  <nav>
+    <i class="fa-solid fa-gear"></i>
+    <h3>Unity Bank</h3>
+    <i onclick="openMenuList()" class="fa-solid fa-bars"></i>
+    <ul class="list" id="menu-list">
+        <i onclick="closeMenuList()" class="fa-solid fa-xmark"></i>
+        <li>
+            <input class="search-input" type="text" placeholder="Search"><i onclick="searchInput.focus()" class="fa-solid fa-magnifying-glass"></i>
+        </li>
+        <li><a href="#">Transfer Money</a></li>
+        <li><a href="#">Bills Payment</a></li>
+        <li><a href="#">Exchange Money</a></li>
+        <li><a href="#">All Transactions</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="login.html">Log Out</a></li>
+    </ul>
+  </nav>
+  <div class="home-cards-wrapper">
+    <div class="home-profile">
+      <img src="https://res.cloudinary.com/demo/image/upload/c_fill,w_100,h_100,g_face,dpr_2.0/smiling_man.jpg" alt="user profile">
+      <h3 class="username">Alexander Hojlund</h3>
+    </div>
+    
+    <div class="home-container bigger-home-container">
+        <h3 class="user-section"><i class="fa-solid fa-coins"></i> Available Balance <i class="fa-solid fa-caret-down rotation"></i></h3>
+        <div class="balance">
+            <h4>Total</h4>
+            <h3>10.500,80 TL<br><span>(TL Equivalent)</span></h3>
+        </div>
+    </div>
+    <div class="home-container">
+        <h3 class="user-section"><i class="fa-solid fa-money-bill-transfer"></i></i> Last Transactions <i class="fa-solid fa-caret-down"></i></h3>
+        <div class="transactions">
+           <p class="withdraw">-200,00 TL</p>
+           <p>04.04.2024</p>
+           <p>95246873-1</p>
+           <p>Money Transfer,<br><br> You <i class="fa-solid fa-right-long"></i> Harry Simons</p>
+        </div>
+        <hr>
+        <div class="transactions">
+            <p class="deposit">+1.000,00 TL</p>
+            <p>08.04.2024</p>
+            <p>95246873-1</p>
+            <p>Money Transfer,<br><br> John Doe <i class="fa-solid fa-right-long"></i> You</p>
+         </div>
+        
+    </div>
+    <div class="home-container">
+        <h3 class="user-section"><i class="fa-solid fa-building-columns"></i> My Accounts <i class="fa-solid fa-caret-down"></i></h3>
+        <div class="account">
+            <p class="acc-bal">1.000,00 TL</p>
+            <p>95246873-1</p>
+        </div>
+        <hr class="account-line">
+        <div class="account">
+            <p class="acc-bal">825,43 USD</p>
+            <p>95246873-2</p>
+        </div>
+        
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

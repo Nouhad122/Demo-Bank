@@ -1,0 +1,249 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: sans-serif;
+    background-color: rgb(234, 232, 232);
+}
+a{
+    text-decoration: none;
+}
+header{
+    background-color: #00285C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+header h3{
+    background-color: rgb(81, 81, 164);
+    border-left: solid 1px whitesmoke;
+    border-right: solid 1px whitesmoke;
+    padding: 10px 20px;
+    color: whitesmoke;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.login-wrapper{
+    min-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.login-wrapper img,.home-profile img{
+  width: 25vw;
+  height: 80px;
+  border-radius: 50%;
+  border: solid 2px #00285C;
+}
+.login-wrapper h3{
+    font-size: .9rem;
+    background-color: #00285C;
+    color: whitesmoke;
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    font-weight: 400;
+}
+.login-wrapper h3 span{
+    font-weight: bold;
+}
+
+.login-wrapper input{
+    width: 60vw;
+    padding: 7px 10px;
+    font-size: .9rem;
+    border: solid 2px #00285C;
+    outline: none;
+    background-color: whitesmoke;
+}
+.login-wrapper input:focus{
+    border: solid 2px rgb(56, 56, 244);
+}
+.login-wrapper button{
+    padding: 7px 35px;
+    border-radius: 20px;
+    color: whitesmoke;
+    background-color: #00285C;
+    border: none;
+}
+nav{
+    background-color: #00285C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+nav h3{
+    background-color: rgb(81, 81, 164);
+    padding: 10px 20px;
+    border-left: solid 1px whitesmoke;
+    border-right: solid 1px whitesmoke;
+    color: whitesmoke;
+    font-size: 1rem;
+    font-weight: 500;
+}
+nav i{
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+nav .list{
+    background-color: #00285C;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    transform: translateX(100%);
+    transition: .3s ease;
+    z-index: 999;
+}
+nav .opened-list{
+    transform: translateX(0);
+}
+ nav ul li:nth-child(2){
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
+nav ul li:last-child{
+    background-color: rgb(201, 15, 15);
+}
+nav ul li{
+    margin-top: 20px;
+    background-color: rgb(81, 81, 164);
+    width: 75vw;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+nav ul li a{
+    color: whitesmoke;
+}
+nav ul li .search-input{
+    padding: 7px 12px;
+    border: solid 2px transparent;
+    border-radius: 0;
+    outline: none;
+}
+
+nav .fa-gear, .fa-bars{
+    cursor: pointer;
+}
+nav ul li i{
+    background-color: whitesmoke;
+    color: rgb(81, 81, 164);
+    padding: 10px 10px 11px 10px;
+    font-size: .8rem;
+    border: none;
+}
+nav ul .fa-xmark{
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    font-size: 1.5rem;
+}
+
+.home-cards-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+}
+.home-profile{
+    text-align: center;
+}
+.home-profile img{
+    width: 20vw;
+    height: 60px;
+}
+.home-cards-wrapper .username{
+    text-align: center;
+    font-weight: 550;
+    color: #00285C;
+}
+.home-container{
+    height: 40px;
+    overflow-y: hidden;
+    transition: .3s ease;
+    background-color: #00285C;
+    color: whitesmoke;
+}
+.bigger-home-container{
+    height: 220px;
+}
+.home-container .user-section{
+    background-color: white;
+    color: #00285C;
+    padding: 10px 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.user-section .fa-caret-down{
+    position: absolute;
+    right: 10px;
+    transition: .3s ease;
+}
+.rotation{
+    rotate: 180deg;
+}
+.home-container .balance{
+    padding: 20px 10px;
+}
+.balance h4{
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 300;
+}
+.balance h3{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.balance h3 span{
+    font-size: .8rem;
+    font-weight: 300;
+}
+.home-container .transactions,.home-container .account{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+}
+.transactions p, .account p{
+    padding: 0 5px;
+    font-size: .8rem;
+}
+.withdraw{
+    color: rgb(255, 0, 0);
+    font-weight: 400;
+}
+.deposit{
+    color: rgb(6, 249, 6);
+    font-weight: 400;
+}
+.home-container hr{
+    height: 1.2px;
+    width: 95%;
+    background-color: whitesmoke;
+    margin-left: 6px;
+    border: none;
+}
+.account{
+   margin-top: 20px;
+}
+.account .acc-bal{
+    font-weight: 600;
+}
+.account-line{
+    margin-top: 20px;
+    height: 2px !important;
+}
