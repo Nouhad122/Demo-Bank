@@ -1,7 +1,12 @@
 let menuList = document.getElementById('menu-list');
 let searchInput = document.querySelector('.search-input');
 let homeContainers = document.querySelectorAll('.home-container');
-
+let amountSpecification = document.querySelector('.amount-specif');
+let successMessage = document.querySelector('.success-message');
+let amountInput = document.getElementById('amount-input');
+let transAmount = document.getElementById('trans-amount');
+let currentBalance = document.getElementById('current-balance');
+let balanceNotEnough = document.querySelector('.not-enough');
 function redirectToHomepage(){
     window.location.href = "homePage.html";
     return false;
@@ -24,3 +29,39 @@ function toggleDropDown(){
     });
 }
 toggleDropDown();
+
+function showTransactionAmount(){
+   amountSpecification.style.display = "flex";
+}
+function hideTransactionAmount(){
+   amountSpecification.style.display = "none";
+}
+
+function displayAmount(num) {
+   amountInput.value.length < 12 ? amountInput.value += num.dataset.value : amountInput.value;
+    let currentValue = amountInput.value.replace(/\./g, '');
+    amountInput.value = currentValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+
+function saveAmount(){
+  amountInput.value ? transAmount.value =`TL ${amountInput.value}`  : transAmount.value = 0; 
+}
+function deleteNumFromAmount(){
+    const amountsArray = amountInput.value.split('');
+    amountsArray.pop();
+    amountInput.value = amountsArray.join('');
+ 
+}
+function redirectSuccess(){
+    let currAmount = transAmount.value.split(',')[0].replace(/TL|\./g,'');
+    let currBal = currentBalance.textContent.split(',')[0].replace(/TL|\.|\,/g,'');
+    if(Number(currAmount) > Number(currBal)){
+        balanceNotEnough.style.display = "block";
+        return false;
+    }
+    else{
+        window.location.href = "success-transaction.html";
+        return false;
+    }
+    
+}

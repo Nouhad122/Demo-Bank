@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Unity Bank | Settings</title>
+</head>
+<body>
+    <nav class="pages-navbar">
+        <div class="arrow-back"><a href="homePage.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+        <a href="transferMoney.html"><h3 class="pages-header">Transfer Money</h3></a>
+    </nav>
+    <div class="transfer-money-container">
+        <div class="amount-specif">
+            <input id="amount-input" type="text" placeholder='TL 0' readonly/>
+            <div class="numbers">
+                <div class="num-section">
+                    <div onclick="displayAmount(this)" class="number" data-value="1">1</div>
+                    <div onclick="displayAmount(this)" class="number" data-value="2">2</div>
+                    <div onclick="displayAmount(this)" class="number" data-value="3">3</div>
+                </div>
+                <div class="num-section">
+                    <div onclick="displayAmount(this)" class="number" data-value="4">4</div>
+                    <div onclick="displayAmount(this)" class="number" data-value="5">5</div>
+                    <div onclick="displayAmount(this)" class="number" data-value="6">6</div>
+                </div>
+                <div class="num-section">
+                    <div onclick="displayAmount(this)" class="number" data-value="7">7</div>
+                    <div onclick="displayAmount(this)" class="number" data-value="8">8</div>
+                    <div onclick="displayAmount(this)" class="number" data-value="9">9</div>
+                </div>
+                <div class="num-section">
+                    <div onclick="displayAmount(this)" class="number" data-value=",">,</div>
+                    <div onclick="displayAmount(this)" class="number" data-value="0">0</div>
+                    <div onclick="deleteNumFromAmount()" class="delete-one"><i class="fa-solid fa-arrow-left"></i></div>
+                </div>
+
+                <div onclick="hideTransactionAmount(); saveAmount()" class="amount-btn">Continue</div>
+            </div>
+            
+        </div>
+        <h5>Alexander Hojlund</h5>
+        <form class="transfer-form" onsubmit="return redirectSuccess()">
+          <div class="id-amount">
+            <p>95246873-1</p>
+            <p id="current-balance">1.000,00 TL</p>
+          </div>
+          <h5>Transaction Date: 01/06/2024</h5>
+            <input type="text" placeholder="IBAN" required/>
+            <input type="text" placeholder="Name" required/>
+            <input onfocus="showTransactionAmount()" type="text" placeholder="Amount" id="trans-amount" required readonly/>
+            <strong class="not-enough">You don't have enough amount</strong>
+            <select class="payment-method">
+                <option value="other">Other Payment Method</option>
+                <option value="Rent Payment">Rent Payment</option>
+                <option value="Employee Payment">Employee Payment</option>
+                <option value="Commercial Payment">Commercial Payment</option>
+                <option value="Individual Payment">Individual Payment</option>
+                <option value="Investment">Investment</option>
+                <option value="Education Payment">Education Payment</option>
+            </select>
+            <textarea placeholder="Description"></textarea>
+            <button type="submit">Send</button>
+            
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
