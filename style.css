@@ -246,13 +246,14 @@ nav .arrow-back{
 .transactions p, .account p{
     padding: 0 5px;
     font-size: .8rem;
+    color: whitesmoke;
 }
 .withdraw{
-    color: rgb(255, 0, 0);
+    color: rgb(255, 0, 0) !important;
     font-weight: 400;
 }
 .deposit{
-    color: rgb(6, 249, 6);
+    color: rgb(6, 249, 6) !important;
     font-weight: 400;
 }
 .home-container hr{
@@ -405,6 +406,7 @@ font-size: .8rem;
     font-size: .7rem;
     display: none;
 }
+/* Success message */
 .success-message{
     background-color:rgb(219, 218, 218);
     min-height: 100vh;
@@ -434,6 +436,31 @@ font-size: .8rem;
     border: none;
     background-color:#00285C;
     color: whitesmoke;
+}
+/* Transaction Receipt */
+
+.receipt-container{
+    min-height: 87.1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.receipt-container .receipt{
+    padding: 30px 0;
+    background-color: white;
+    border: solid 2px #00285C;
+    color:#00285C;
+}
+.receipt .receipt-detail{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.receipt .receipt-desc{
+    margin: 20px;
+}
+.receipt-desc p{
+    margin-top: 5px;
 }
 
 
