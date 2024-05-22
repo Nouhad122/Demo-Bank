@@ -291,7 +291,7 @@ nav .arrow-back{
     color: whitesmoke;
 }
 /* Transfer Money */
-.transfer-money-container{
+.transfer-money-container,.bill-payment-container{
     min-height: 80.5vh;
     display: flex;
     flex-direction: column;
@@ -302,12 +302,11 @@ nav .arrow-back{
     top: 0;
     left: 0;
 }
-.transfer-money-container .transfer-form{
+.transfer-money-container .transfer-form, .bill-form{
     display: flex;
     flex-direction: column;
     width: 90vw;
     gap: 20px;
-    
 }
 .transfer-money-container .id-amount{
     display: flex;
@@ -395,7 +394,7 @@ nav .arrow-back{
     padding: 15px;
 }
 .payment-method{
-font-size: .8rem;
+   font-size: .8rem;
    padding: 8px;
    border: none;
    outline: none;
@@ -456,11 +455,76 @@ font-size: .8rem;
     display: flex;
     justify-content: space-between;
 }
+.receipt-detail p{
+    font-size: .9rem;
+}
 .receipt .receipt-desc{
     margin: 20px;
 }
 .receipt-desc p{
     margin-top: 5px;
+}
+/* Transaction History */
+
+.trans-history-cont .trans-am{
+    margin: 20px 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 75vw;
+}
+.trans-history-cont .trans-user{
+  margin: 5px 20px 20px 20px;
+}
+.trans-history-cont p{
+    font-size: .9rem;
+}
+.see-more-btn{
+    text-align: center;
+}
+.see-more-btn button{
+    padding: 5px;
+    width: 80vw;
+    border: solid 2px #00285C;
+    background-color: transparent;
+    color:#00285C;
+    font-style: italic;
+}
+
+/* Bill Payment */
+.col-div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.col-div input{
+    padding: 7px;
+    font-size: .9rem;
+    border: solid 1px #00285C;
+    outline: none;
+}
+.row-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row-div input{
+    padding: 5px;
+    width: 20vw;
+    text-align: center;
+    border: solid 1px #00285C;
+    outline: none;
+}
+.col-div input:focus,.row-div input:focus{
+    border: solid 1px rgb(81, 81, 164); 
+}
+.pay-bill-btn{
+    padding: 7px;
+    width: 50vw;
+    align-self: center;
+    font-size: .9rem;
+    border: none;
+    background-color: #00285C;
+    color: whitesmoke;
 }
 
 

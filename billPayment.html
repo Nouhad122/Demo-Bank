@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Unity Bank | Settings</title>
+    <title>Unity Bank | Bill Payment</title>
 </head>
-<body id="transfer-money-page">
+<body id="bill-payment-page">
     <nav class="pages-navbar">
         <div class="arrow-back"><a href="homePage.html"><i class="fa-solid fa-arrow-left"></i></a></div>
-        <a href="transferMoney.html"><h3 class="pages-header">Transfer Money</h3></a>
+        <a href="billPayment.html"><h3 class="pages-header">Bill Payment</h3></a>
     </nav>
-    <div class="transfer-money-container">
+    <div class="bill-payment-container">
         <div class="amount-specif">
             <input id="amount-input" type="text" placeholder='TL 0' readonly/>
             <div class="numbers">
@@ -41,30 +41,34 @@
             </div>
             
         </div>
-        <h5>Alexander Hojlund</h5>
-        <form class="transfer-form" onsubmit="return redirectSuccess()">
-          <div class="id-amount">
-            <p>95246873-1</p>
-            <p id="current-balance">1.000,00 TL</p>
-          </div>
-          <h5>Transaction Date: 01/06/2024</h5>
-            <input type="text" placeholder="IBAN" required/>
-            <input type="text" placeholder="Name" required/>
-            <input onfocus="showTransactionAmount()" type="text" placeholder="Amount" id="trans-amount" required readonly/>
+        <form class="bill-form" onsubmit="return redirectSuccess()">
+            <div class="col-div">
+                <p>Bill To Pay</p>
+                <select class="payment-method">
+                    <option value="Water">Water</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="WIFI">WIFI</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Gas">Gas</option>
+                </select>
+            </div>
+            <div class="col-div">
+                <label for="bill-num">Enter Bill Number</label>
+                <input type="text" id="bill-num" placeholder="Bill Number" required/>
+            </div>
+            <div class="row-div">
+                <label for="bill-amount">Amount To Pay</label>
+                <input onfocus="showTransactionAmount()" type="text" id="trans-amount" value="TL 0" readonly/>
+            </div>
             <strong class="not-enough">You don't have enough amount</strong>
-            <select class="payment-method">
-                <option value="other">Other Payment Method</option>
-                <option value="Rent Payment">Rent Payment</option>
-                <option value="Employee Payment">Employee Payment</option>
-                <option value="Commercial Payment">Commercial Payment</option>
-                <option value="Individual Payment">Individual Payment</option>
-                <option value="Investment">Investment</option>
-                <option value="Education Payment">Education Payment</option>
-            </select>
-            <textarea placeholder="Description"></textarea>
-            <button type="submit">Send</button>
+            <div class="row-div">
+                <h5 for="bill-amount">Available Balance</h5>
+                <p id="current-balance">1.000,00 TL</p>
+            </div>
             
+            <button class="pay-bill-btn" type="submit">Pay Bill</button>
         </form>
+
     </div>
     <script src="script.js"></script>
 </body>

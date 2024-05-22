@@ -60,7 +60,7 @@ function redirectSuccess(){
         return false;
     }
     else{
-        window.location.href = "success-transaction.html";
+        document.body.id ==="transfer-money-page" ? window.location.href = "success-transaction.html": window.location.href = "success-bill.html";
         return false;
     }
     
