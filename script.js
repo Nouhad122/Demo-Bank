@@ -7,6 +7,9 @@ let amountInput = document.getElementById('amount-input');
 let transAmount = document.getElementById('trans-amount');
 let currentBalance = document.getElementById('current-balance');
 let balanceNotEnough = document.querySelector('.not-enough');
+let buyCheckbox = document.getElementById('buy');
+let sellCheckbox = document.getElementById('sell');
+let currencySelection = document.getElementById('currency-selection');
 function redirectToHomepage(){
     window.location.href = "homePage.html";
     return false;
@@ -44,7 +47,7 @@ function displayAmount(num) {
   }
 
 function saveAmount(){
-  amountInput.value ? transAmount.value =`TL ${amountInput.value}`  : transAmount.value = 0; 
+  amountInput.value ? transAmount.value = document.body.id === "exchange-money-page" ? amountInput.value : `TL ${amountInput.value}`  : transAmount.value = 0; 
 }
 function deleteNumFromAmount(){
     const amountsArray = amountInput.value.split('');
@@ -63,5 +66,41 @@ function redirectSuccess(){
         document.body.id ==="transfer-money-page" ? window.location.href = "success-transaction.html": window.location.href = "success-bill.html";
         return false;
     }
+}
+
+function redirectExchangeSuccess(){
+    let currAmount = transAmount.value.split(',')[0].replace(/TL|\./g,'');
+    let currBal = currentBalance.textContent.split(',')[0].replace(/TL|\.|\,/g,'');
+    if(currencySelection.value === '$'){
+        currAmount = currAmount * 32.124;
+    }
+    else if(currencySelection.value === '€'){
+        currAmount = (currAmount * 32.124) / 0.9;
+    }
+    else{
+        currAmount = currAmount;
+    }
+
+    if(Number(currAmount) > Number(currBal)){
+        balanceNotEnough.style.display = "block";
+        return false;
+    }
+    else{
+        window.location.href = "success-exchange.html";
+    return false;
+    }
     
+}
+function redirectNewAccountSuccess(){
+    window.location.href = "successNewAccount.html";
+    return false;
+}
+
+function toggleCheckBoxes(boxChecked,boxUnchecked){
+   if(boxChecked.checked){
+    boxUnchecked.checked = false;
+   }
+   else{
+    boxChecked.checked = true;
+   }
 }

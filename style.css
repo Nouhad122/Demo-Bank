@@ -526,5 +526,23 @@ nav .arrow-back{
     background-color: #00285C;
     color: whitesmoke;
 }
-
+/* Exchange Money */
+.checkboxes-container{
+    display: flex;
+    padding: 0 20px 10px 20px;
+    justify-content: space-between;
+}
+.check-cont{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.2rem;
+}
+.check-cont input{
+    width: 10vw;
+}
+.curr-rates{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
 

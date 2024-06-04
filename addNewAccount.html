@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Unity Bank | Exchange Money</title>
+    <title>Unity Bank | Add A New Account</title>
 </head>
 <body id="exchange-money-page">
     <nav class="pages-navbar">
         <div class="arrow-back"><a href="homePage.html"><i class="fa-solid fa-arrow-left"></i></a></div>
-        <a href="exchange-money.html"><h3 class="pages-header">Exchange Money</h3></a>
+        <a href="addNewAccount.html"><h3 class="pages-header">Add A New Account</h3></a>
     </nav>
     <div class="bill-payment-container">
         <div class="amount-specif">
@@ -41,24 +41,25 @@
             </div>
             
         </div>
-        <form class="bill-form" onsubmit="return redirectExchangeSuccess()">
-            <div class="checkboxes-container">
-                <div class="check-cont">
-                    <input type="checkbox" id="buy" checked onchange="toggleCheckBoxes(this,sellCheckbox)">
-                    <label for="buy">Buy</label>
-                </div>
-                <div class="check-cont">
-                    <input type="checkbox" id="sell" onchange="toggleCheckBoxes(this, buyCheckbox)">
-                    <label for="sell">Sell</label>
-                </div>
-            </div>
+        <form class="bill-form" onsubmit="return redirectNewAccountSuccess()">
+           
             <div class="col-div">
-                <p>Choose Account</p>
+                <p>Name</p>
+                <input type="text" placeholder="Enter Your Name" required>
+            </div>
+
+            <div class="col-div">
+                <p>Type</p>
                 <select class="payment-method">
-                    <option value="95246873-1">95246873-1</option>
-                    <option value="95246873-2">95246873-2</option>
+                    <option value="Savings Account">Savings Account</option>
+                    <option value="Checking Account">Checking Account</option>
+                    <option value="Money Market Account (MMA) Account">Money Market Account (MMA) Account</option>
+                    <option value="Certificate of Deposit (CD) Account">Certificate of Deposit (CD) Account</option>
+                    <option value="Individual Retirement (IRA) Account">Individual Retirement (IRA) Account</option>
+
                 </select>
             </div>
+
             <div class="row-div">
                 <p>Choose Currency</p>
                 <select class="payment-method" id="currency-selection">
@@ -67,28 +68,13 @@
                     <option value="€">€</option>
                 </select>
             </div>
-            <div class="col-div">
-                <h5>Exchange Rate:</h5>
-                    <div class="curr-rates">
-                        <p>0,9€</p>
-                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                        <p>1$</p>
-                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                        <p>32,124TL</p>
-                    </div>
-                
-            </div>
+        
             <div class="row-div">
-                <label for="bill-amount">Amount To Buy/Sell</label>
+                <label for="bill-amount">Account Limit</label>
                 <input onfocus="showTransactionAmount()" type="text" id="trans-amount" value="0" readonly/>
             </div>
-            <strong class="not-enough">You don't have enough amount</strong>
-            <div class="row-div">
-                <h5 for="bill-amount">Available Balance</h5>
-                <p id="current-balance">1.000,00 TL</p>
-            </div>
             
-            <button class="pay-bill-btn" type="submit">Buy/Sell</button>
+            <button class="pay-bill-btn" type="submit">Add Account</button>
         </form>
 
     </div>
