@@ -13,6 +13,8 @@
         <a href="exchange-money.html"><h3 class="pages-header">Exchange Money</h3></a>
     </nav>
     <div class="bill-payment-container">
+        <div class="blur" onclick="hideConfirmMessage()"></div>
+        
         <div class="amount-specif">
             <input id="amount-input" type="text" placeholder='0' readonly/>
             <div class="numbers">
@@ -42,6 +44,11 @@
             
         </div>
         <form class="bill-form" onsubmit="return redirectExchangeSuccess()">
+        <div class="confirm-container">
+            <h5>Are you sure you want to exchange money?</h5>
+            <button type="submit">Confirm</button>
+            <button type="button" onclick="hideConfirmMessage()">Cancel</button>
+        </div>
             <div class="checkboxes-container">
                 <div class="check-cont">
                     <input type="checkbox" id="buy" checked onchange="toggleCheckBoxes(this,sellCheckbox)">
@@ -88,7 +95,7 @@
                 <p id="current-balance">1.000,00 TL</p>
             </div>
             
-            <button class="pay-bill-btn" type="submit">Buy/Sell</button>
+            <button class="pay-bill-btn" type="button" onclick="showConfirmMessage()">Buy/Sell</button>
         </form>
 
     </div>

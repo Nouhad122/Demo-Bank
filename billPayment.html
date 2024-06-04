@@ -13,6 +13,7 @@
         <a href="billPayment.html"><h3 class="pages-header">Bill Payment</h3></a>
     </nav>
     <div class="bill-payment-container">
+        <div class="blur" onclick="hideConfirmMessage()"></div>
         <div class="amount-specif">
             <input id="amount-input" type="text" placeholder='TL 0' readonly/>
             <div class="numbers">
@@ -42,6 +43,11 @@
             
         </div>
         <form class="bill-form" onsubmit="return redirectSuccess()">
+            <div class="confirm-container">
+                <h5>Are you sure you want to pay this bill?</h5>
+                <button type="submit">Confirm</button>
+                <button type="button" onclick="hideConfirmMessage()">Cancel</button>
+            </div>
             <div class="col-div">
                 <p>Bill To Pay</p>
                 <select class="payment-method">
@@ -66,7 +72,7 @@
                 <p id="current-balance">1.000,00 TL</p>
             </div>
             
-            <button class="pay-bill-btn" type="submit">Pay Bill</button>
+            <button class="pay-bill-btn" type="button" onclick="showConfirmMessage()">Pay Bill</button>
         </form>
 
     </div>

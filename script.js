@@ -7,9 +7,22 @@ let amountInput = document.getElementById('amount-input');
 let transAmount = document.getElementById('trans-amount');
 let currentBalance = document.getElementById('current-balance');
 let balanceNotEnough = document.querySelector('.not-enough');
+let confirmMessage = document.querySelector('.confirm-container');
+let blurry = document.querySelector('.blur');
 let buyCheckbox = document.getElementById('buy');
 let sellCheckbox = document.getElementById('sell');
 let currencySelection = document.getElementById('currency-selection');
+
+function showConfirmMessage(){
+    confirmMessage.classList.add('show-confirm-container');
+    blurry.style.display = "block";
+}
+function hideConfirmMessage(){
+    confirmMessage.classList.remove('show-confirm-container');
+    blurry.style.display = "none";
+}
+
+
 function redirectToHomepage(){
     window.location.href = "homePage.html";
     return false;
@@ -96,6 +109,10 @@ function redirectNewAccountSuccess(){
     return false;
 }
 
+function redirectLoginPage(){
+    window.location.href = "login.html";
+    return false;
+}
 function toggleCheckBoxes(boxChecked,boxUnchecked){
    if(boxChecked.checked){
     boxUnchecked.checked = false;

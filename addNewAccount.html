@@ -13,6 +13,7 @@
         <a href="addNewAccount.html"><h3 class="pages-header">Add A New Account</h3></a>
     </nav>
     <div class="bill-payment-container">
+        <div class="blur" onclick="hideConfirmMessage()"></div>
         <div class="amount-specif">
             <input id="amount-input" type="text" placeholder='0' readonly/>
             <div class="numbers">
@@ -42,7 +43,11 @@
             
         </div>
         <form class="bill-form" onsubmit="return redirectNewAccountSuccess()">
-           
+            <div class="confirm-container">
+                <h5>Are you sure you want to add an account?</h5>
+                <button type="submit">Confirm</button>
+                <button type="button" onclick="hideConfirmMessage()">Cancel</button>
+            </div>
             <div class="col-div">
                 <p>Name</p>
                 <input type="text" placeholder="Enter Your Name" required>
@@ -74,7 +79,7 @@
                 <input onfocus="showTransactionAmount()" type="text" id="trans-amount" value="0" readonly/>
             </div>
             
-            <button class="pay-bill-btn" type="submit">Add Account</button>
+            <button class="pay-bill-btn" type="button" onclick="showConfirmMessage()">Add Account</button>
         </form>
 
     </div>

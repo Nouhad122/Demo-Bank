@@ -13,6 +13,7 @@
         <a href="transferMoney.html"><h3 class="pages-header">Transfer Money</h3></a>
     </nav>
     <div class="transfer-money-container">
+        <div class="blur" onclick="hideConfirmMessage()"></div>
         <div class="amount-specif">
             <input id="amount-input" type="text" placeholder='TL 0' readonly/>
             <div class="numbers">
@@ -43,6 +44,11 @@
         </div>
         <h5>Alexander Hojlund</h5>
         <form class="transfer-form" onsubmit="return redirectSuccess()">
+            <div class="confirm-container">
+                <h5>Are you sure you want to transfer money?</h5>
+                <button type="submit">Confirm</button>
+                <button type="button" onclick="hideConfirmMessage()">Cancel</button>
+            </div>
           <div class="id-amount">
             <p>95246873-1</p>
             <p id="current-balance">1.000,00 TL</p>
@@ -62,7 +68,7 @@
                 <option value="Education Payment">Education Payment</option>
             </select>
             <textarea placeholder="Description"></textarea>
-            <button type="submit">Send</button>
+            <button type="button" onclick="showConfirmMessage()">Send</button>
             
         </form>
     </div>
